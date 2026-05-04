@@ -20,6 +20,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Auto-enables GitHub Pages on the repo if it isn't on yet, so the
+      # very first build doesn't fail with "Pages not enabled". After the
+      # first deploy this step is a no-op.
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"

@@ -6,17 +6,16 @@ You don't need to install anything on your computer. Every step happens in your 
 
 ---
 
-## Step 1 — Turn on the website (one click)
+## Step 1 — Wait about a minute
 
-1. Click the **Settings** tab at the top of this repository.
-2. Click **Pages** in the left sidebar.
-3. Under **Build and deployment → Source**, select **GitHub Actions**.
-4. That's it. Wait about a minute for the site to build (the **Actions** tab shows progress).
+The first time you create this repository, GitHub automatically builds and publishes your site. Watch progress under the **Actions** tab.
 
-Your site is now live at:
+Your site appears at:
 **`https://<your-github-username>.github.io/<this-repo-name>/`**
 
 For example, if your username is `myschool` and you named the repo `board-docs`, your site is at `https://myschool.github.io/board-docs/`.
+
+> **If the site doesn't appear after a few minutes:** open repo **Settings → Pages** and confirm "Source" is set to **GitHub Actions**. Then re-run the failed workflow under the **Actions** tab.
 
 ---
 
