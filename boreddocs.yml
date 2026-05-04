@@ -7,10 +7,11 @@ schema_version: 1
 site:
   name: "Your School District"
   short_name: "YSD"
-  # If you want a custom domain (e.g. boards.yourdistrict.org), set
-  # both `url` and clear `base_url`. If you're publishing under
-  # https://<your-github-username>.github.io/<this-repo-name>/, set
-  # base_url to "/<this-repo-name>" instead.
+  # `base_url` is set automatically by the deploy workflow based on
+  # where GitHub Pages is publishing (project subpath, apex domain,
+  # or custom domain). You normally don't need to touch this.
+  # If you're using a custom domain, set `url` to the full origin
+  # (e.g. https://boards.yourdistrict.org) — it's used in sitemap.xml.
   url: ""
   base_url: ""
   description: "Board agendas, minutes, and policies for Your School District."

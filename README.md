@@ -27,7 +27,6 @@ For example, if your username is `myschool` and you named the repo `board-docs`,
    - `name: "Your School District"` → your district's full name
    - `short_name: "YSD"` → a short version (initials are fine)
    - `mission_statement` and `vision_statement` → your district's statements
-   - Set `base_url: "/<this-repo-name>"` (e.g. `base_url: "/board-docs"`) so links work correctly. Leave blank if you set up a custom domain.
 4. Scroll down, write a short message ("Set up district info"), and click **Commit changes**.
 5. The site automatically rebuilds in about a minute.
 

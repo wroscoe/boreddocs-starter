@@ -20,10 +20,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Auto-enables GitHub Pages on the repo if it isn't on yet, so the
-      # very first build doesn't fail with "Pages not enabled". After the
-      # first deploy this step is a no-op.
-      - uses: actions/configure-pages@v5
+      # Auto-enables GitHub Pages on the repo if it isn't on yet, and
+      # exposes the base_path the site will be served from (e.g.
+      # "/<repo>" for project pages, "" for custom domains).
+      - id: pages
+        uses: actions/configure-pages@v5
         with:
           enablement: true
 
@@ -35,7 +36,10 @@ jobs:
       - run: pip install -r requirements.txt
 
       - run: boreddocs check
-      - run: boreddocs build
+      # --base-url is auto-set from the Pages config above so static
+      # assets and internal links resolve correctly under any deploy
+      # URL (apex, subpath, or custom domain).
+      - run: boreddocs build --base-url "${{ steps.pages.outputs.base_path }}"
 
       - uses: actions/upload-pages-artifact@v3
         with:
