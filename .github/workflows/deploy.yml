@@ -20,13 +20,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Auto-enables GitHub Pages on the repo if it isn't on yet, and
+      # Reads the Pages config (set by the user in Settings → Pages) and
       # exposes the base_path the site will be served from (e.g.
-      # "/<repo>" for project pages, "" for custom domains).
+      # "/<repo>" for project pages, "" for custom domains). Pages must
+      # be enabled manually first — see this repo's README, Step 1.
       - id: pages
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - uses: actions/setup-python@v5
         with:
